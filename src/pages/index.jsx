@@ -5,9 +5,8 @@ import Login from './Login'
 const Pages = () => {
   return (
     <Switch>
-      <Route path='/' exact component={Home}></Route>
-
-      <Route path='/login' component={Login}></Route>
+      <Route path='/' exact component={Home} />
+      <Route path='/login' component={Login} />
     </Switch>
   )
 }
