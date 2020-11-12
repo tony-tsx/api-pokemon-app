@@ -18,7 +18,7 @@ const LazyCardComponent3 = lazy(
     .then( () => import( '../components/LazyCardComponent3' ) )
 )
 
-const Home = () => {
+const LazyPageComponent = () => {
   return (
     <Container>
       <Suspense fallback={ <h1>Carregando 1...</h1> }>
@@ -46,4 +46,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default LazyPageComponent
