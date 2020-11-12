@@ -4,6 +4,11 @@ import App from './app'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import './index.css'
+
+import classnames from 'classnames'
+
+window.classnames = classnames
+
 ReactDOM.render(
   <React.StrictMode>
     <App></App>
