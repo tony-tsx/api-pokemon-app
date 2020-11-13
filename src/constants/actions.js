@@ -1,0 +1,1 @@
+export const SIGN_IN_USER = Symbol( 'sign-in-user' )

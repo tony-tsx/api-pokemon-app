@@ -1,7 +1,7 @@
 import { useCallback, useState,
   // useState
 } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import Card from '../components/Card'
 import Col from '../components/Col'
 import Container from '../components/Container'
@@ -18,23 +18,18 @@ const Register = () => {
   const [ err, setErr ] = useState( null )
   const [ loading, setLoading ] = useState( false )
 
+  const history = useHistory()
+
   const handlerSubmit = useCallback( ( event ) => {
     event.preventDefault()
     const data = Object.fromEntries( new FormData( event.currentTarget ) )
 
-    console.log( data )
-
     setLoading( true )
     api.post( '/users', data )
-      .then( response => {
-        console.log( response.data )
-      } )
-      .catch( reason => {
-        console.error( reason )
-        setErr( reason )
-      } )
+      .then( response => history.push( '/login' ) )
+      .catch( reason => setErr( reason ) )
       .finally( () => setLoading( false ) )
-  }, [] )
+  }, [ history ] )
 
   return (
     <Container className='h-100'>
@@ -47,10 +42,10 @@ const Register = () => {
               ) }
               <Card.Title>Sign Up</Card.Title>
               <form onSubmit={handlerSubmit}>
-                <FormGroup label='Name' required name='name' type='text' pattern='^([A-z]| ){10,}'/>
-                <FormGroup label='Nick' required name='nick' type='text' pattern='^([a-z-]| ){4,}'/>
-                <FormGroup label='E-mail' required name='email' type='email'/>
-                <FormGroup label='Password' required name='password' type='password' pattern='.{6,}'/>
+                <FormGroup label='Name' required name='name' type='text' pattern='^([A-z]| ){10,}' disabled={loading}/>
+                <FormGroup label='Nick' required name='nick' type='text' pattern='^([a-z-]| ){4,}' disabled={loading}/>
+                <FormGroup label='E-mail' required name='email' type='email' disabled={loading}/>
+                <FormGroup label='Password' required name='password' type='password' pattern='.{6,}' disabled={loading}/>
                 <div className="mb-3">
                   <Link to='/login'>Sign In</Link>
                 </div>
