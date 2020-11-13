@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "email": "tony.js@zoho.eu",
+      "password": "$2a$10$SYZ8HxXY2eDDLYhZRCbEGem5Mm2IVtKsXNR5d9/cNLntd9wFNShsO",
+      "name": "Antonio Vitor Lopes Junior",
+      "nick": "tony-tsx",
+      "id": 1
+    },
+    {
+      "email": "teste@gmail.com",
+      "password": "$2a$10$.AoHcYoPEv0jcq4p1k3.PepaNB6mqz.o74GYOFvjWokwyu8dzQkWa",
+      "name": "Antonio Vitor Lopes Junior",
+      "nick": "tony-tsx",
+      "id": 2
+    }
+  ]
+}

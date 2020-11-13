@@ -7,11 +7,9 @@ import CardSubtitle from './Subtitle'
 import CardText from './Text'
 import CardTitle from './Title'
 
-const Card = ( { children, className } ) => {
+const Card = ( { className, ...props } ) => {
   return (
-    <div className={useClassNames( 'card', className )}>
-      {children}
-    </div>
+    <div className={useClassNames( 'card', className )} {...props}/>
   )
 }
 
