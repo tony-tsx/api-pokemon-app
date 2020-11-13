@@ -1,6 +1,6 @@
-import { useCallback, useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { useCallback, useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useHistory } from 'react-router-dom'
 import signIn from '../actions/signIn'
 import Card from '../components/Card'
 import Col from '../components/Col'
@@ -13,6 +13,9 @@ import api from '../services/api'
 const Login = () => {
 
   const dispatch = useDispatch()
+
+  const history = useHistory()
+  const hasUser = useSelector( state => !!state.user )
 
   const [ err, setErr ] = useState( null )
 
@@ -30,10 +33,17 @@ const Login = () => {
           .then( response => response.data[0] )
           .then( user => ( { ...user, authorization } ) )
       } )
-      .then( user => dispatch( signIn( user ) ) )
+      .then( user => {
+        dispatch( signIn( user ) )
+        history.push( '/profile' )
+      } )
       .catch( reason => setErr( reason ) )
       .finally( () => setLoading( false ) )
-  }, [ dispatch ] )
+  }, [ dispatch, history ] )
+
+  // useEffect( () => {
+  //   if ( hasUser ) history.push( '/profile' )
+  // }, [ hasUser, history ] )
 
   return (
     <Container className='h-100'>
