@@ -1,0 +1,10 @@
+export const POKEMON_TYPE_COLORS = {
+  BUG: '#92BC2C',
+  DARK: '#595761',
+
+  POISON: '#B763CF',
+
+  GRASS: '#5FBD58',
+  FIRE: '#FBA54C',
+  WATER: '#539DDF'
+}

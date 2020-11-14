@@ -5,7 +5,21 @@
       "password": "$2a$10$57OwcFSDsBsuhinwmQ2j5OsVLXtHcFLp9Uw8PfTXmOg4rZoGej9WK",
       "name": "Antonio Vitor Lopes Junior",
       "nick": "tony-tsx",
+      "id": 1,
+      "pokemons": [
+        7
+      ]
+    }
+  ],
+  "initialPokemonsIds": [
+    {
       "id": 1
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 7
     }
   ]
 }

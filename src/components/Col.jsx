@@ -1,7 +1,7 @@
 import { useMemo } from "react"
 import useClassNames from "../hooks/useClassNames"
 
-const Col = ( { children, size, sm, md, lg, xl, className } ) => {
+const Col = ( { children, size, sm, md, lg, xl, className, ...props } ) => {
   const c = useMemo( () => {
     if ( !( size || sm || md || lg || xl ) ) return 'col'
     return {
@@ -16,7 +16,7 @@ const Col = ( { children, size, sm, md, lg, xl, className } ) => {
   const allClassNames = useClassNames( c, className )
 
   return (
-    <div className={allClassNames}>
+    <div className={allClassNames} {...props}>
       {children}
     </div>
   )

@@ -37,9 +37,7 @@ const Register = () => {
         <Col sm={10} md={8} lg={6} xl={5}>
           <Card>
             <Card.Body>
-              { err && (
-                <RequestError error={err} />
-              ) }
+              { err && <RequestError error={err} /> }
               <Card.Title>Sign Up</Card.Title>
               <form onSubmit={handlerSubmit}>
                 <FormGroup label='Name' required name='name' type='text' pattern='^([A-z]| ){10,}' disabled={loading}/>

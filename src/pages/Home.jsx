@@ -2,8 +2,12 @@ import Container from '../components/Container'
 import Row from '../components/Row'
 import Col from '../components/Col'
 import Card from '../components/Card'
+import useLoginRedirectEffect from '../hooks/useLoginRedirectEffect'
 
 const Home = () => {
+
+  if ( useLoginRedirectEffect() ) return null
+
   return (
     <Container>
       <Row className='pt-5'>
